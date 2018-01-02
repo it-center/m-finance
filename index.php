@@ -27,6 +27,4 @@ $f3->config('routes.cfg');
 
 $f3->run();
 
-// Check pulling
-
-$a=1;
+// Check pulling 222
