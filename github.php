@@ -1,4 +1,2 @@
 <?php
-    if ( $_POST['payload'] ) {
-        exec('git reset --hard HEAD && git pull');
-    }
+    exec('git reset --hard HEAD && git pull');
