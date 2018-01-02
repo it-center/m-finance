@@ -28,3 +28,5 @@ $f3->config('routes.cfg');
 $f3->run();
 
 // Check pulling
+
+$a=1;
