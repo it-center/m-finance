@@ -26,3 +26,5 @@ $f3->set('DB', $db);*/
 $f3->config('routes.cfg');
 
 $f3->run();
+
+// Check pulling
