@@ -552,9 +552,16 @@ html {
     text-align: center;
 }
 
-.registration-form {
-    width: 100%;
+.registration_form {
     color: #fff;
+    padding: 65px 0;
+
+    label {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 0;
+        font-size: 1.1rem;
+    }
 
     h1 {
         font-family: 'HelveticaNeueCyr-Medium';
@@ -564,25 +571,29 @@ html {
     label.required {
       &::after {
           content: " *";
-          color: #e0922f;
+          color: #fc4a1a;
       }
     }
 
     .flowers-radio {
-        appearance: none;
+        display: none;
 
-        border-radius: 50%;
-        width: 16px;
-        height: 16px;
+        &+ span {
+            display: inline-block;
+            height: 22px;
+            width: 22px;
+            margin-right: 15px;
+            vertical-align: middle;
+            background-image: url(../img/sprite.png);
+            background-position: left center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            cursor: pointer;
+        }
 
-        border: 2px solid black;
-        transition: 0.2s all linear;
-        outline: none;
-        margin-right: 5px;
-
-        position: relative;
-        top: 4px;
-        background-color: black;
+        &:checked + span {
+            background-position: right center;
+        }
     }
 
     .flowers-radio:checked {
@@ -593,26 +604,25 @@ html {
     .flowers-select {
         width: 100%;
         height: 36px;
-        padding: 0 25px;
+        padding: 0;
+        padding-left: 18px;
+        padding-right: 50px;
         line-height: 36px;
 
         border: none;
-        border-radius: 25px;
+        border-radius: 18px;
 
         cursor: pointer;
 
-        opacity: 0.8;
-        background-color: #e4e8ef;
-        background-image: url('angle-down.svg');
-        background-size: 50px 50px;
-        background-position: right center;
+        background-color: rgba(255,255,255,0.7);
+        background-image: url('../icon/angle-down.svg');
+        background-size: 36px 36px;
+        background-position: right 8px center;
         background-repeat: no-repeat;
 
         /* hide arrow hack */
         -webkit-appearance: none;
         -moz-appearance: none;
-        text-indent: 1px;
-        text-overflow: '';
     }
 
     .flowers-select::-ms-expand {
@@ -622,18 +632,17 @@ html {
     .flowers-input-text {
         width: 100%;
         height: 36px;
-        padding: 0 25px;
+        padding: 0 18px;
         line-height: 36px;
 
         border: none;
-        border-radius: 25px;
-        opacity: 0.8;
-        background-color: #e4e8ef;
-
-        text-indent: 0.01px;
-        text-overflow: '';
-        appearance: none!important;
+        border-radius: 18px;
+        background-color: rgba(255,255,255,0.7);
     }
+}
+
+.registration_item {
+    padding-top: 20px;
 }
 
 @media (min-width: 576px) {
@@ -658,6 +667,10 @@ html {
         th {
             font-size: 1rem;
         }
+    }
+
+    .registration_form {
+        padding: 65px 0;
     }
 }
 
@@ -686,6 +699,10 @@ html {
 
     .banner_background {
         padding-top: 85px;
+    }
+
+    .registration_form {
+        padding: 140px 0;
     }
 }
 
@@ -860,6 +877,10 @@ html {
             margin-top: 40px;
             margin-bottom: 30px;
         }
+    }
+
+    .registration_form {
+        padding: 180px 0;
     }
 }
 
