@@ -4,40 +4,14 @@ namespace controllers;
 class formController{
     public function sendData($f3)
 	{
-        $secname = $f3->get('POST.second_name');
-        $name = $f3->get('POST.first_name');
-        $phone = $f3->get('POST.phone');
-        $list = $f3->get('POST.list');
-        $second_name_1 = $f3->get('POST.second_name_1');
-        $first_name_1 = $f3->get('POST.first_name_1');
-        $second_name_2 = $f3->get('POST.second_name_2');
-        $first_name_2 = $f3->get('POST.first_name_2');
-        $second_name_3 = $f3->get('POST.second_name_3');
-        $first_name_3 = $f3->get('POST.first_name_3');
-        $second_name_4 = $f3->get('POST.second_name_4');
-        $first_name_4 = $f3->get('POST.first_name_4');
+        $name = $f3->get('POST');
+        echo "<pre>";
+        print_r($name);
+        echo "</pre>";
 
         $secname = trim(htmlspecialchars(stripslashes($secname)));
-        $name = trim(htmlspecialchars(stripslashes($name)));
-        $phone = trim(htmlspecialchars(stripslashes($phone)));
-        $list = trim(htmlspecialchars(stripslashes($list)));
-        $second_name_1 = trim(htmlspecialchars(stripslashes($second_name_1)));
-        $first_name_1 = trim(htmlspecialchars(stripslashes($first_name_1)));
-        $second_name_2 = trim(htmlspecialchars(stripslashes($second_name_2)));
-        $first_name_2 = trim(htmlspecialchars(stripslashes($first_name_2)));
-        $second_name_3 = trim(htmlspecialchars(stripslashes($second_name_3)));
-        $first_name_3 = trim(htmlspecialchars(stripslashes($first_name_3)));
-        $second_name_4 = trim(htmlspecialchars(stripslashes($second_name_4)));
-        $first_name_4 = trim(htmlspecialchars(stripslashes($first_name_4)));
 
-        $room_3 = $f3->get('DB')->exec('SELECT COUNT(`id`) FROM `booking` WHERE `list`=2');
-        $room_4 = $f3->get('DB')->exec('SELECT COUNT(`id`) FROM `booking` WHERE `list`=3');
-        $room_5 = $f3->get('DB')->exec('SELECT COUNT(`id`) FROM `booking` WHERE `list`=4');
-
-        $room_3 = $room_3[0]["COUNT(`id`)"];
-        $room_4 = $room_4[0]["COUNT(`id`)"];
-        $room_5 = $room_5[0]["COUNT(`id`)"];
-
+        /*
 		if ((mb_strlen($secname) < 1)||(mb_strlen($secname) > 255)||
             (mb_strlen($name) < 1)||(mb_strlen($name) > 255)||
             (mb_strlen($phone) < 1)||(mb_strlen($phone) > 255)||
@@ -96,7 +70,7 @@ class formController{
             }
 
             \models\formAction::doneSend($f3, $secname, $name, $phone, $list, $list_visitors);
-        }
+        }*/
 	}
 }
 ?>
