@@ -44,7 +44,7 @@ class page
 	{
 		$template = \Template::instance();
 		
-		echo "Регистрация производителя";
+		echo $template->render("producer-form.html");
 	}
 
 	public static function producerRegError($f3, $codeError, $textError)
@@ -53,7 +53,7 @@ class page
 		$f3->set('codeError', $codeError);
 		$f3->set('textError', $textError);
 		
-		echo "Регистрация производителя";
+		echo $template->render("producer-form.html");
 	}
 
 	public static function notFound($f3)
