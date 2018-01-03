@@ -37,6 +37,6 @@ class formController{
                                                           { $textError = "Вы не выбрали категорию субъектов Гражданского Права"; \models\formAction::buyerErrorSend($f3, $textError); }
         elseif (mb_strlen($arrayData[refcode]) > 255)     { $textError = "Вы ввели больше 255 символов в поле Реферальный код"; \models\formAction::buyerErrorSend($f3, $textError); }
         elseif ($arrayData[check]!=1)                     { $textError = "Вы не приняли Условия использования и заявление о конфиденциальности"; \models\formAction::buyerErrorSend($f3, $textError); }
-        else                                              { echo "<pre>"; print_r($arrayData); echo "</pre>";/*\models\formAction::buyerDoneSend($f3, $arrayData); */}
+        else                                              { \models\formAction::buyerDoneSend($f3, $arrayData); }
 	}
 }

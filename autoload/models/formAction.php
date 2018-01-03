@@ -8,23 +8,33 @@ class formAction{
 	}
 
 	public static function buyerDoneSend($f3, $arrayData)
-	{
-        /*
+	{   
         $f3->get('DB')->exec(
-            'INSERT INTO `booking`(`id`, `name`, `phone`, `list`, `list_visitors`) VALUES (?,?,?,?,?)',
+            'INSERT INTO `buyers`(`id`, `login`, `email`, `password`, `name`, `phone`, `country`, `mark`, `ship`, `shipphone`, `company`, `taxid`, `site`, `companyinfo`, `bankdetail`, `person`, `refcode`) VALUES (NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
             array (
-                1=> NULL,
-                2=> $secname.' '.$name,
-                3=> $phone,
-                4=> intval($list),
-                5=> json_encode($list_visitors)
+                1=> $arrayData[login],
+                2=> $arrayData[email],
+                3=> sha1($arrayData[password]),
+                4=> $arrayData[name],
+                5=> $arrayData[phone],
+                6=> $arrayData[country],
+                7=> $arrayData[mark],
+                8=> $arrayData[ship],
+                9=> $arrayData[shipphone],
+                10=> $arrayData[company],
+                11=> $arrayData[taxid],
+                12=> $arrayData[site],
+                13=> $arrayData[companyinfo],
+                14=> $arrayData[bankdetail],
+                15=> $arrayData[person],
+                16=> $arrayData[refcode]
             )
         );
 
         //
 		//	Отправляем на мыло
 		//
-
+        /*
 		$to  = "prefecture-ar@yandex.ru";
 		$subject = "PREFECTVRA - ".$secname." ".$name;
 		$message = "<html><body>
