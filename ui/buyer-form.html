@@ -158,5 +158,8 @@
 	<script src="/ui/js/jquery-3.2.1.slim.min.js"></script>
 	<script src="/ui/js/popper.min.js"></script>
 	<script src="/ui/js/bootstrap.min.js"></script>
+	<check if="{{ @codeError }}"><script>
+		alert('{{ @textError }}');
+	</script></check>
 </body>
 </html>
