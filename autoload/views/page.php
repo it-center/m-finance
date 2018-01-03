@@ -31,9 +31,27 @@ class page
 		echo $template->render("buyer-form.html");
 	}
 
+	public static function buyerRegError($f3, $codeError, $textError)
+	{
+		$template = \Template::instance();
+		$f3->set('codeError', $codeError);
+		$f3->set('textError', $textError);
+		
+		echo $template->render("buyer-form.html");
+	}
+
 	public static function producerReg($f3)
 	{
 		$template = \Template::instance();
+		
+		echo "Регистрация производителя";
+	}
+
+	public static function producerRegError($f3, $codeError, $textError)
+	{
+		$template = \Template::instance();
+		$f3->set('codeError', $codeError);
+		$f3->set('textError', $textError);
 		
 		echo "Регистрация производителя";
 	}
