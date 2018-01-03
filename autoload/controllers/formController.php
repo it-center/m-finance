@@ -50,6 +50,10 @@ class formController{
         }
         unset($value);
 
+        echo "<pre>";
+        print_r($arrayData);
+        echo "</pre>";
+
         /*
 		if (mb_strlen($arrayData[login]) < 1)             { $textError = "Вы не заполнили поле Логин"; \models\formAction::buyerErrorSend($f3, $textError); }
         elseif (mb_strlen($arrayData[login]) > 255)       { $textError = "Вы ввели больше 255 символов в поле Логин"; \models\formAction::buyerErrorSend($f3, $textError); }
