@@ -12,7 +12,7 @@ class formController{
         unset($value);
 
         echo "<pre>";
-        print_r($name);
+        print_r($arrayData);
         echo "</pre>";
 
         /*
