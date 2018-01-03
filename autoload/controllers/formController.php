@@ -4,12 +4,16 @@ namespace controllers;
 class formController{
     public function buyerSendData($f3)
 	{
-        $name = $f3->get('POST');
+        $arrayData = $f3->get('POST');
+
+        foreach ($arrayData as $key => &$value) {
+            $value = trim(htmlspecialchars(stripslashes($value)));
+        }
+        unset($value);
+
         echo "<pre>";
         print_r($name);
         echo "</pre>";
-
-        $secname = trim(htmlspecialchars(stripslashes($secname)));
 
         /*
 		if ((mb_strlen($secname) < 1)||(mb_strlen($secname) > 255)||
