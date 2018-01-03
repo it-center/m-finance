@@ -2,14 +2,14 @@
 namespace models;
 
 class formAction{
-    public static function errorSend($f3, $code, $text)
+    public static function buyerErrorSend($f3, $textError)
 	{
-		\views\page::error($f3, $code, $text);
+		\views\page::buyerRegError($f3, 1, $textError);
 	}
 
-	public static function doneSend($f3, $secname, $name, $phone, $list, $list_visitors)
+	public static function buyerDoneSend($f3, $arrayData)
 	{
-
+        /*
         $f3->get('DB')->exec(
             'INSERT INTO `booking`(`id`, `name`, `phone`, `list`, `list_visitors`) VALUES (?,?,?,?,?)',
             array (
@@ -41,6 +41,7 @@ class formAction{
         mail($to,$subject,$message,$header_v);
 
         \views\page::done($f3);
+        */
 	}
 }
 ?>
