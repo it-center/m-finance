@@ -2,7 +2,7 @@
 namespace controllers;
 
 class formController{
-    public function sendData($f3)
+    public function buyerSendData($f3)
 	{
         $name = $f3->get('POST');
         echo "<pre>";
