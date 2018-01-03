@@ -13,7 +13,7 @@ $f3->config('config.ini');
 
 $f3->set('AUTOLOAD', 'autoload/');
 
-$db = new DB\SQL('mysql:host=localhost;port=3306;dbname=u482956',
+$db = new DB\SQL('mysql:host=u482956.mysql.masterhost.ru;port=3306;dbname=u482956',
 'u482956',
 'SLaveR2nA-.er2',
 array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET time_zone = \'+03:00\'',
