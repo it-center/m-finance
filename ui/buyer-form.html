@@ -58,69 +58,75 @@
 					<div class="col-12">
 						<h1>Регистрация</h1>
 					</div>
-					<div class="col-12 col-md-6 col-lg-4 registration_item">
-						<label class="required" for="input-login">Логин</label>
-						<input name="login" class="flowers-input-text" id="input-login" type="text" value="{{ @POST.login }}" maxlength="255" required>
+					<div class="col-12 col-md-6 col-lg-4">
+						<div class="registration_item">
+							<label class="required" for="input-login">Логин</label>
+							<input name="login" class="flowers-input-text" id="input-login" type="text" value="{{ @POST.login }}" maxlength="255" required>
+						</div>
+						<div class="registration_item">
+							<label class="required" for="input-email">Электронная почта</label>
+							<input name="email" class="flowers-input-text" id="input-email" type="text" value="{{ @POST.email }}" maxlength="255" required>
+						</div>
+						<div class="registration_item">
+							<label class="required" for="input-password">Пароль</label>
+							<input name="password" class="flowers-input-text" id="input-password" type="password" value="{{ @POST.password }}" maxlength="255" required>
+						</div>
+						<div class="registration_item">
+							<label class="required" for="input-name">ФИО</label>
+							<input name="name" class="flowers-input-text" id="input-name" type="text" value="{{ @POST.name }}" maxlength="255" required>
+						</div>
+						<div class="registration_item">
+							<label class="required" for="input-phone">Телефон</label>
+							<input name="phone" class="flowers-input-text" id="input-phone" type="text" value="{{ @POST.phone }}" maxlength="255" required>
+						</div>
 					</div>
-					<div class="col-12 col-md-6 col-lg-4 registration_item">
-						<label class="required" for="select-country">Страна</label>
-						<select name="country" class="flowers-select" id="select-country">
-							<option value="ru">Россия</option>
-							<option value="es">Испания</option>
-							<option value="gb">Великобритания</option>
-							<option value="us">США</option>
-						</select>
+					<div class="col-12 col-md-6 col-lg-4">
+						<div class="registration_item">
+							<label class="required" for="select-country">Страна</label>
+							<select name="country" class="flowers-select" id="select-country">
+								<option value="ru">Россия</option>
+								<option value="es">Испания</option>
+								<option value="gb">Великобритания</option>
+								<option value="us">США</option>
+							</select>
+						</div>
+						<div class="registration_item">
+							<label class="required" for="input-mark">Маркировка</label>
+							<input name="mark" class="flowers-input-text" id="input-mark" type="text" value="{{ @POST.mark }}" maxlength="255" required>
+						</div>
+						<div class="registration_item">
+							<label for="input-ship">Транспортная компания</label>
+							<input name="ship" class="flowers-input-text" id="input-ship" type="text" value="{{ @POST.ship }}" maxlength="255">
+						</div>
+						<div class="registration_item">
+							<label for="input-ship-phone">Телефон транспортной компании</label>
+							<input name="shipphone" class="flowers-input-text" id="input-ship-phone" type="text" value="{{ @POST.shipphone }}" maxlength="255">
+						</div>
 					</div>
-					<div class="col-12 col-md-6 col-lg-4 registration_item">
-						<label for="input-company">Название компании</label>
-						<input name="company" class="flowers-input-text" id="input-company" type="text" value="{{ @POST.company }}" maxlength="255">
+					<div class="col-12 col-md-6 col-lg-4">
+						<div class="registration_item">
+							<label for="input-company">Название компании</label>
+							<input name="company" class="flowers-input-text" id="input-company" type="text" value="{{ @POST.company }}" maxlength="255">
+						</div>
+						<div class="registration_item">
+							<label for="input-tax-id">ИНН</label>
+							<input name="taxid" class="flowers-input-text" id="input-tax-id" type="text" value="{{ @POST.taxid }}" maxlength="255">
+						</div>
+						<div class="registration_item">
+							<label for="input-site">Сайт</label>
+							<input name="site" class="flowers-input-text" id="input-site" type="text" value="{{ @POST.site }}" maxlength="255">
+						</div>
+						<div class="registration_item">
+							<label for="input-company-info">Информация о компании</label>
+							<input name="companyinfo" class="flowers-input-text" id="input-company-info" type="text" value="{{ @POST.companyinfo }}" maxlength="255">
+						</div>
+						<div class="registration_item">
+							<label for="input-bank-detail">Банковские данные</label>
+							<input name="bankdetail" class="flowers-input-text" id="input-bank-detail" type="text" value="{{ @POST.bankdetail }}" maxlength="255">
+						</div>
 					</div>
-					<div class="col-12 col-md-6 col-lg-4 registration_item">
-						<label class="required" for="input-email">Электронная почта</label>
-						<input name="email" class="flowers-input-text" id="input-email" type="text" value="{{ @POST.email }}" maxlength="255" required>
-					</div>
-					<div class="col-12 col-md-6 col-lg-4 registration_item">
-						<label class="required" for="input-mark">Маркировка</label>
-						<input name="mark" class="flowers-input-text" id="input-mark" type="text" value="{{ @POST.mark }}" maxlength="255" required>
-					</div>
-					<div class="col-12 col-md-6 col-lg-4 registration_item">
-						<label for="input-tax-id">Tax ID</label>
-						<input name="taxid" class="flowers-input-text" id="input-tax-id" type="text" value="{{ @POST.taxid }}" maxlength="255">
-					</div>
-					<div class="col-12 col-md-6 col-lg-4 registration_item">
-						<label class="required" for="input-password">Пароль</label>
-						<input name="password" class="flowers-input-text" id="input-password" type="password" value="{{ @POST.password }}" maxlength="255" required>
-					</div>
-					<div class="col-12 col-md-6 col-lg-4 registration_item">
-						<label for="input-ship">Транспортная компания</label>
-						<input name="ship" class="flowers-input-text" id="input-ship" type="text" value="{{ @POST.ship }}" maxlength="255">
-					</div>
-					<div class="col-12 col-md-6 col-lg-4 registration_item">
-						<label for="input-site">Сайт</label>
-						<input name="site" class="flowers-input-text" id="input-site" type="text" value="{{ @POST.site }}" maxlength="255">
-					</div>
-					<div class="col-12 col-md-6 col-lg-4 registration_item">
-						<label class="required" for="input-name">ФИО</label>
-						<input name="name" class="flowers-input-text" id="input-name" type="text" value="{{ @POST.name }}" maxlength="255" required>
-					</div>
-					<div class="col-12 col-md-6 col-lg-4 registration_item">
-						<label for="input-ship-phone">Телефон транспортной компании</label>
-						<input name="shipphone" class="flowers-input-text" id="input-ship-phone" type="text" value="{{ @POST.shipphone }}" maxlength="255">
-					</div>
-					<div class="col-12 col-md-6 col-lg-4 registration_item">
-						<label for="input-company-info">Информация о компании</label>
-						<input name="companyinfo" class="flowers-input-text" id="input-company-info" type="text" value="{{ @POST.companyinfo }}" maxlength="255">
-					</div>
-					<div class="col-12 col-md-6 col-lg-4 registration_item">
-						<label class="required" for="input-phone">Телефон</label>
-						<input name="phone" class="flowers-input-text" id="input-phone" type="text" value="{{ @POST.phone }}" maxlength="255" required>
-					</div>
-					<div class="col-12 col-md-6 col-lg-4 registration_item">
-					</div>
-					<div class="col-12 col-md-6 col-lg-4 registration_item">
-						<label for="input-bank-detail">Банковские данные</label>
-						<input name="bankdetail" class="flowers-input-text" id="input-bank-detail" type="text" value="{{ @POST.bankdetail }}" maxlength="255">
-					</div>
+				</div>
+				<div class="row">
 					<div class="col-12 col-md-6 col-lg-4 registration_item">
 						<label>
 							<input name="person" class="flowers-radio" type="radio" value="individual" maxlength="255" required><span></span>
