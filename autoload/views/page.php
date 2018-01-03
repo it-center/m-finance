@@ -28,7 +28,7 @@ class page
 	{
 		$template = \Template::instance();
 		
-		echo "Регистрация покупателя";
+		echo $template->render("buyer-form.html");
 	}
 
 	public static function producerReg($f3)
