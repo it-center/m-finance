@@ -6,7 +6,7 @@ class formController{
 	{
         $arrayData = $f3->get('POST');
 
-        foreach ($arrayData as $key => &$value) {
+        foreach ($arrayData as &$value) {
             $value = trim(htmlspecialchars(stripslashes($value)));
         }
         unset($value);
