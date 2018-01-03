@@ -34,24 +34,41 @@ class formAction{
         //
 		//	Отправляем на мыло
 		//
-        /*
-		$to  = "prefecture-ar@yandex.ru";
-		$subject = "PREFECTVRA - ".$secname." ".$name;
+
+		$to  = "finance@m-flowers.com";
+		$subject = "M-Flowers - $arrayData[name]";
 		$message = "<html><body>
-					<p>ФИО: ".$secname." ".$name."</p>
-					<p>Телефон: ".$phone."</p>
-                    <p>Мест в номере: ".($list+1)."</p>
-                    <p>Гости: ".implode(', ', $list_visitors)."</p>
+                    <p>Логин: $arrayData[login]</p>
+                    <p>Электронная почта: $arrayData[email]</p>
+                    <p>ФИО: $arrayData[name]</p>
+                    <p>Телефон: $arrayData[phone]</p>
+                    <p>Категория суб. ГП: $arrayData[person]</p>
+                    <hr>
+                    <p>Страна: $arrayData[country]</p>
+                    <p>Маркировка: $arrayData[mark]</p>
+                    <p>Транспортная компания: $arrayData[ship]</p>
+                    <p>Телефон транспортной компании: $arrayData[shipphone]</p>
+                    <hr>
+                    <p>Название компании: $arrayData[company]</p>
+                    <p>ИНН: $arrayData[taxid]</p>
+                    <p>Сайт: $arrayData[site]</p>
+                    <p>Информация о компании: $arrayData[companyinfo]</p>
+                    <p>Банковские данные: $arrayData[bankdetail]</p>
+                    <hr>
+                    <p>Реферальный код: $arrayData[refcode]</p>
 					</body></html>";
       	
-        $header_v = "From: PREFECTVRA <no-reply@prefectvra.ru>\r\n"; 
-		$header_v .= "Reply-To: no-reply@prefectvra.ru\r\n"; 
-        $header_v .= "Content-Type: text/html; charset=utf-8\r\n";
+        $header = "From: M-Flowers <no-reply@m-flowers.com>\r\n"; 
+		$header .= "Reply-To: no-reply@m-flowers.com\r\n"; 
+        $header .= "Content-Type: text/html; charset=utf-8\r\n";
         
-        mail($to,$subject,$message,$header_v);
+        if(mail($to,$subject,$message,$header)) {
+            echo "Всё ок";
+        } else {
+            echo "Всё не ок";
+        }
 
-        \views\page::done($f3);
-        */
+        //\views\page::done($f3);
 	}
 }
 ?>
