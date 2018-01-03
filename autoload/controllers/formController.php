@@ -39,6 +39,11 @@ class formController{
         elseif ($arrayData[check]!=1)                     { echo "Вы не приняли Условия использования и заявление о конфиденциальности"; }
         else                                              { echo "Всё ок!"; }
 
+        echo "<pre>";
+        foreach ($arrayData as $key => $value) {
+            echo "$key $value\n";
+        }
+        echo "</pre>";
         /*{
             \models\formAction::errorSend($f3, 1, "Вы не заполнили все поля");
         } elseif (($list==2)&&
