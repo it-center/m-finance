@@ -36,7 +36,7 @@ class formAction{
 		//
 
 		$to  = "finance@m-flowers.com";
-		$subject = "M-Flowers - $arrayData[name]";
+		$subject = "M-Flowers | Покупатель - $arrayData[name]";
 		$message = "<html><body>
                     <p>Логин: $arrayData[login]</p>
                     <p>Электронная почта: $arrayData[email]</p>
@@ -63,12 +63,69 @@ class formAction{
         $header .= "Content-Type: text/html; charset=utf-8\r\n";
         
         if(mail($to,$subject,$message,$header)) {
-            echo "Всё ок";
+            $text = 'Регистрация прошла успешно!';
+            buyerErrorSend($f3, 1, $text);
         } else {
-            echo "Всё не ок";
+            $text = 'При отправке данных произошла ошибка.\nПопробуйте снова.';
+            buyerErrorSend($f3, 1, $text);
         }
+    }
+    
+    public static function producerErrorSend($f3, $textError)
+	{
+		\views\page::producerRegError($f3, 1, $textError);
+	}
 
-        //\views\page::done($f3);
+	public static function producerDoneSend($f3, $arrayData)
+	{   
+        $f3->get('DB')->exec(
+            'INSERT INTO `producers`(`id`, `login`, `email`, `password`, `name`, `phone`, `country`, `company`, `taxid`, `site`, `companyinfo`, `bankdetail`) VALUES (NULL,?,?,?,?,?,?,?,?,?,?,?)',
+            array (
+                1=> $arrayData[login],
+                2=> $arrayData[email],
+                3=> sha1($arrayData[password]),
+                4=> $arrayData[name],
+                5=> $arrayData[phone],
+                6=> $arrayData[country],
+                7=> $arrayData[company],
+                8=> $arrayData[taxid],
+                9=> $arrayData[site],
+                10=> $arrayData[companyinfo],
+                11=> $arrayData[bankdetail]
+            )
+        );
+
+        //
+		//	Отправляем на мыло
+		//
+
+		$to  = "finance@m-flowers.com";
+		$subject = "M-Flowers | Производитель - $arrayData[name]";
+		$message = "<html><body>
+                    <p>Логин: $arrayData[login]</p>
+                    <p>Электронная почта: $arrayData[email]</p>
+                    <p>ФИО: $arrayData[name]</p>
+                    <p>Телефон: $arrayData[phone]</p>
+                    <hr>
+                    <p>Страна: $arrayData[country]</p>
+                    <p>Название компании: $arrayData[company]</p>
+                    <p>ИНН: $arrayData[taxid]</p>
+                    <p>Сайт: $arrayData[site]</p>
+                    <p>Информация о компании: $arrayData[companyinfo]</p>
+                    <p>Банковские данные: $arrayData[bankdetail]</p>
+					</body></html>";
+      	
+        $header = "From: M-Flowers <no-reply@m-flowers.com>\r\n"; 
+		$header .= "Reply-To: no-reply@m-flowers.com\r\n"; 
+        $header .= "Content-Type: text/html; charset=utf-8\r\n";
+        
+        if(mail($to,$subject,$message,$header)) {
+            $text = 'Регистрация прошла успешно!';
+            producerErrorSend($f3, 1, $text);
+        } else {
+            $text = 'При отправке данных произошла ошибка.\nПопробуйте снова.';
+            producerErrorSend($f3, 1, $text);
+        }
 	}
 }
 ?>
