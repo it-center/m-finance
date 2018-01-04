@@ -17,7 +17,7 @@ $db = new DB\SQL('mysql:host=u482956.mysql.masterhost.ru;port=3306;dbname=u48295
 'u482956',
 'SLaveR2nA-.er2',
 array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET time_zone = \'+03:00\'',
-	  PDO::MYSQL_ATTR_INIT_COMMAND => 'SET CHARACTER SET utf8',
+	  PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
 	  PDO::ATTR_ERRMODE			=> PDO::ERRMODE_EXCEPTION) //для обработки исключений при ошибках в запросах к бд
 );
 
