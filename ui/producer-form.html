@@ -92,12 +92,12 @@
 							</select>
 						</div>
 						<div class="registration_item">
-							<label for="input-company">Название компании</label>
-							<input name="company" class="flowers-input-text" id="input-company" type="text" value="{{ @POST.company }}" maxlength="255">
+							<label class="required" for="input-company">Название компании</label>
+							<input name="company" class="flowers-input-text" id="input-company" type="text" value="{{ @POST.company }}" maxlength="255" required>
 						</div>
 						<div class="registration_item">
-							<label for="input-tax-id">ИНН</label>
-							<input name="taxid" class="flowers-input-text" id="input-tax-id" type="text" value="{{ @POST.taxid }}" maxlength="255">
+							<label class="required" for="input-tax-id">ИНН</label>
+							<input name="taxid" class="flowers-input-text" id="input-tax-id" type="text" value="{{ @POST.taxid }}" maxlength="255" required>
 						</div>
 						<div class="registration_item">
 							<label for="input-site">Сайт</label>
