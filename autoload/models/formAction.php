@@ -64,10 +64,10 @@ class formAction{
         
         if(mail($to,$subject,$message,$header)) {
             $textError = 'Регистрация прошла успешно!';
-            formAction::buyerErrorSend($f3, 1, $textError);
+            formAction::buyerErrorSend($f3, $textError);
         } else {
             $textError = 'При отправке данных произошла ошибка.\nПопробуйте снова.';
-            formAction::buyerErrorSend($f3, 1, $textError);
+            formAction::buyerErrorSend($f3, $textError);
         }
     }
     
@@ -121,10 +121,10 @@ class formAction{
         
         if(mail($to,$subject,$message,$header)) {
             $textError = 'Регистрация прошла успешно!';
-            formAction::producerErrorSend($f3, 1, $textError);
+            formAction::producerErrorSend($f3, $textError);
         } else {
             $textError = 'При отправке данных произошла ошибка.\nПопробуйте снова.';
-            formAction::producerErrorSend($f3, 1, $textError);
+            formAction::producerErrorSend($f3, $textError);
         }
 	}
 }
