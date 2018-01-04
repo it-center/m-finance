@@ -63,11 +63,11 @@ class formAction{
         $header .= "Content-Type: text/html; charset=utf-8\r\n";
         
         if(mail($to,$subject,$message,$header)) {
-            $text = 'Регистрация прошла успешно!';
-            formAction::buyerErrorSend($f3, 1, $text);
+            $textError = 'Регистрация прошла успешно!';
+            formAction::buyerErrorSend($f3, 1, $textError);
         } else {
-            $text = 'При отправке данных произошла ошибка.\nПопробуйте снова.';
-            formAction::buyerErrorSend($f3, 1, $text);
+            $textError = 'При отправке данных произошла ошибка.\nПопробуйте снова.';
+            formAction::buyerErrorSend($f3, 1, $textError);
         }
     }
     
@@ -120,11 +120,11 @@ class formAction{
         $header .= "Content-Type: text/html; charset=utf-8\r\n";
         
         if(mail($to,$subject,$message,$header)) {
-            $text = 'Регистрация прошла успешно!';
-            formAction::producerErrorSend($f3, 1, $text);
+            $textError = 'Регистрация прошла успешно!';
+            formAction::producerErrorSend($f3, 1, $textError);
         } else {
-            $text = 'При отправке данных произошла ошибка.\nПопробуйте снова.';
-            formAction::producerErrorSend($f3, 1, $text);
+            $textError = 'При отправке данных произошла ошибка.\nПопробуйте снова.';
+            formAction::producerErrorSend($f3, 1, $textError);
         }
 	}
 }
