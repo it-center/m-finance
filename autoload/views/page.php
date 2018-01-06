@@ -6,6 +6,10 @@ class page
 	public static function main($f3)
 	{
 		$template = \Template::instance();
+
+		$arrayValues = \models\getValueRate::getValues();
+		$f3->set('usd',$arrayValues[usd]);
+		$f3->set('eur',$arrayValues[eur]);
 		
 		echo $template->render("index.html");
     }
@@ -13,6 +17,10 @@ class page
     public static function buyer($f3)
 	{
 		$template = \Template::instance();
+
+		$arrayValues = \models\getValueRate::getValues();
+		$f3->set('usd',$arrayValues[usd]);
+		$f3->set('eur',$arrayValues[eur]);
 		
 		echo $template->render("buyer.html");
     }
@@ -20,6 +28,10 @@ class page
 	public static function producer($f3)
 	{
 		$template = \Template::instance();
+
+		$arrayValues = \models\getValueRate::getValues();
+		$f3->set('usd',$arrayValues[usd]);
+		$f3->set('eur',$arrayValues[eur]);
 		
 		echo $template->render("producer.html");
 	}
