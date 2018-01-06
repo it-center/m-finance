@@ -15,14 +15,14 @@ $eur = $json->eur;
 
 foreach($usd as $value) {
     if($value->type == "sell") {
-        $usd_sell = $value->value;
+        $usd_sell = number_format($value->value, 2, ',', '');
         break;
     }
 }
 
 foreach($eur as $value) {
     if($value->type == "sell") {
-        $eur_sell = $value->value;
+        $eur_sell = number_format($value->value, 2, ',', '');
         break;
     }
 }
