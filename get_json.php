@@ -6,7 +6,25 @@ if($curl = curl_init()) {
     curl_setopt($curl,CURLOPT_FOLLOWLOCATION,true);
     curl_setopt($curl,CURLOPT_CONNECTTIMEOUT,30); 
     curl_setopt($curl,CURLOPT_USERAGENT,'modesto-finance.com');
-    $json = curl_exec($curl);
+    $json = json_decode(curl_exec($curl));
     curl_close($curl);
 }
-echo $json;
+
+$usd = $json->usd;
+$eur = $json->eur;
+
+foreach($usd as $value) {
+    if($value->type == "sell") {
+        $usd_sell = $value->value;
+        break;
+    }
+}
+
+foreach($eur as $value) {
+    if($value->type == "sell") {
+        $eur_sell = $value->value;
+        break;
+    }
+}
+
+echo "$usd_sell\n$eur_sell\n";
